@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import RxSwift
+import SnapKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,21 +9,32 @@
 /* Begin PBXBuildFile section */
 		E797FD6E2C607ADD00D6ABE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD6D2C607ADD00D6ABE6 /* AppDelegate.swift */; };
 		E797FD702C607ADD00D6ABE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD6F2C607ADD00D6ABE6 /* SceneDelegate.swift */; };
-		E797FD722C607ADD00D6ABE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD712C607ADD00D6ABE6 /* ViewController.swift */; };
-		E797FD752C607ADD00D6ABE6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E797FD742C607ADD00D6ABE6 /* Base */; };
+		E797FD722C607ADD00D6ABE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD712C607ADD00D6ABE6 /* MainViewController.swift */; };
 		E797FD772C607ADF00D6ABE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E797FD762C607ADF00D6ABE6 /* Assets.xcassets */; };
 		E797FD7A2C607ADF00D6ABE6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E797FD792C607ADF00D6ABE6 /* Base */; };
+		E797FD832C607B1F00D6ABE6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E797FD822C607B1F00D6ABE6 /* Alamofire */; };
+		E797FD862C607B2900D6ABE6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E797FD852C607B2900D6ABE6 /* SnapKit */; };
+		E797FD892C607B3300D6ABE6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E797FD882C607B3300D6ABE6 /* RxSwift */; };
+		E797FD8F2C607BB000D6ABE6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD8E2C607BB000D6ABE6 /* MainViewModel.swift */; };
+		E797FD912C607BC400D6ABE6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD902C607BC400D6ABE6 /* NetworkManager.swift */; };
+		E797FD932C607C0200D6ABE6 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD922C607C0200D6ABE6 /* Pokemon.swift */; };
+		E797FD952C607C0900D6ABE6 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD942C607C0900D6ABE6 /* Detail.swift */; };
+		E797FD992C607C6D00D6ABE6 /* PokedexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD982C607C6D00D6ABE6 /* PokedexCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E797FD6A2C607ADD00D6ABE6 /* PokeDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E797FD6D2C607ADD00D6ABE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E797FD6F2C607ADD00D6ABE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E797FD712C607ADD00D6ABE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E797FD742C607ADD00D6ABE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E797FD712C607ADD00D6ABE6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E797FD762C607ADF00D6ABE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E797FD792C607ADF00D6ABE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E797FD7B2C607ADF00D6ABE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E797FD8E2C607BB000D6ABE6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E797FD902C607BC400D6ABE6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E797FD922C607C0200D6ABE6 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		E797FD942C607C0900D6ABE6 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		E797FD982C607C6D00D6ABE6 /* PokedexCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E797FD892C607B3300D6ABE6 /* RxSwift in Frameworks */,
+				E797FD832C607B1F00D6ABE6 /* Alamofire in Frameworks */,
+				E797FD862C607B2900D6ABE6 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +70,51 @@
 		E797FD6C2C607ADD00D6ABE6 /* PokeDex */ = {
 			isa = PBXGroup;
 			children = (
+				E797FD8D2C607B7500D6ABE6 /* Common */,
+				E797FD8C2C607B6A00D6ABE6 /* Model */,
+				E797FD8B2C607B6400D6ABE6 /* View */,
+				E797FD8A2C607B5C00D6ABE6 /* ViewModel */,
 				E797FD6D2C607ADD00D6ABE6 /* AppDelegate.swift */,
 				E797FD6F2C607ADD00D6ABE6 /* SceneDelegate.swift */,
-				E797FD712C607ADD00D6ABE6 /* ViewController.swift */,
-				E797FD732C607ADD00D6ABE6 /* Main.storyboard */,
 				E797FD762C607ADF00D6ABE6 /* Assets.xcassets */,
 				E797FD782C607ADF00D6ABE6 /* LaunchScreen.storyboard */,
 				E797FD7B2C607ADF00D6ABE6 /* Info.plist */,
 			);
 			path = PokeDex;
+			sourceTree = "<group>";
+		};
+		E797FD8A2C607B5C00D6ABE6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E797FD8E2C607BB000D6ABE6 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E797FD8B2C607B6400D6ABE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E797FD712C607ADD00D6ABE6 /* MainViewController.swift */,
+				E797FD982C607C6D00D6ABE6 /* PokedexCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E797FD8C2C607B6A00D6ABE6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E797FD922C607C0200D6ABE6 /* Pokemon.swift */,
+				E797FD942C607C0900D6ABE6 /* Detail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E797FD8D2C607B7500D6ABE6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E797FD902C607BC400D6ABE6 /* NetworkManager.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +133,11 @@
 			dependencies = (
 			);
 			name = PokeDex;
+			packageProductDependencies = (
+				E797FD822C607B1F00D6ABE6 /* Alamofire */,
+				E797FD852C607B2900D6ABE6 /* SnapKit */,
+				E797FD882C607B3300D6ABE6 /* RxSwift */,
+			);
 			productName = PokeDex;
 			productReference = E797FD6A2C607ADD00D6ABE6 /* PokeDex.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +166,11 @@
 				Base,
 			);
 			mainGroup = E797FD612C607ADD00D6ABE6;
+			packageReferences = (
+				E797FD812C607B1F00D6ABE6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E797FD842C607B2900D6ABE6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E797FD872C607B3300D6ABE6 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = E797FD6B2C607ADD00D6ABE6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +187,6 @@
 			files = (
 				E797FD772C607ADF00D6ABE6 /* Assets.xcassets in Resources */,
 				E797FD7A2C607ADF00D6ABE6 /* Base in Resources */,
-				E797FD752C607ADD00D6ABE6 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +197,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E797FD722C607ADD00D6ABE6 /* ViewController.swift in Sources */,
+				E797FD722C607ADD00D6ABE6 /* MainViewController.swift in Sources */,
+				E797FD952C607C0900D6ABE6 /* Detail.swift in Sources */,
 				E797FD6E2C607ADD00D6ABE6 /* AppDelegate.swift in Sources */,
+				E797FD912C607BC400D6ABE6 /* NetworkManager.swift in Sources */,
+				E797FD992C607C6D00D6ABE6 /* PokedexCell.swift in Sources */,
 				E797FD702C607ADD00D6ABE6 /* SceneDelegate.swift in Sources */,
+				E797FD8F2C607BB000D6ABE6 /* MainViewModel.swift in Sources */,
+				E797FD932C607C0200D6ABE6 /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E797FD732C607ADD00D6ABE6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E797FD742C607ADD00D6ABE6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E797FD782C607ADF00D6ABE6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +353,6 @@
 				INFOPLIST_FILE = PokeDex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +380,6 @@
 				INFOPLIST_FILE = PokeDex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +417,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E797FD812C607B1F00D6ABE6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		E797FD842C607B2900D6ABE6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		E797FD872C607B3300D6ABE6 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E797FD822C607B1F00D6ABE6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E797FD812C607B1F00D6ABE6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E797FD852C607B2900D6ABE6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E797FD842C607B2900D6ABE6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E797FD882C607B3300D6ABE6 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E797FD872C607B3300D6ABE6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E797FD622C607ADD00D6ABE6 /* Project object */;
 }
