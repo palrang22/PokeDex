@@ -74,10 +74,10 @@
 				E797FD8C2C607B6A00D6ABE6 /* Model */,
 				E797FD8B2C607B6400D6ABE6 /* View */,
 				E797FD8A2C607B5C00D6ABE6 /* ViewModel */,
+				E797FD782C607ADF00D6ABE6 /* LaunchScreen.storyboard */,
 				E797FD6D2C607ADD00D6ABE6 /* AppDelegate.swift */,
 				E797FD6F2C607ADD00D6ABE6 /* SceneDelegate.swift */,
 				E797FD762C607ADF00D6ABE6 /* Assets.xcassets */,
-				E797FD782C607ADF00D6ABE6 /* LaunchScreen.storyboard */,
 				E797FD7B2C607ADF00D6ABE6 /* Info.plist */,
 			);
 			path = PokeDex;
