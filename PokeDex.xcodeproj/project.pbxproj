@@ -21,6 +21,7 @@
 		E797FD992C607C6D00D6ABE6 /* PokedexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD982C607C6D00D6ABE6 /* PokedexCell.swift */; };
 		E797FD9B2C62F51E00D6ABE6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD9A2C62F51E00D6ABE6 /* UIColor.swift */; };
 		E797FD9D2C630D3700D6ABE6 /* PokemonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD9C2C630D3700D6ABE6 /* PokemonDetail.swift */; };
+		E797FD9F2C63510900D6ABE6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD9E2C63510900D6ABE6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		E797FD982C607C6D00D6ABE6 /* PokedexCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexCell.swift; sourceTree = "<group>"; };
 		E797FD9A2C62F51E00D6ABE6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E797FD9C2C630D3700D6ABE6 /* PokemonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetail.swift; sourceTree = "<group>"; };
+		E797FD9E2C63510900D6ABE6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				E797FD712C607ADD00D6ABE6 /* MainViewController.swift */,
 				E797FD982C607C6D00D6ABE6 /* PokedexCell.swift */,
+				E797FD9E2C63510900D6ABE6 /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				E797FD702C607ADD00D6ABE6 /* SceneDelegate.swift in Sources */,
 				E797FD9B2C62F51E00D6ABE6 /* UIColor.swift in Sources */,
 				E797FD8F2C607BB000D6ABE6 /* MainViewModel.swift in Sources */,
+				E797FD9F2C63510900D6ABE6 /* DetailViewController.swift in Sources */,
 				E797FD9D2C630D3700D6ABE6 /* PokemonDetail.swift in Sources */,
 				E797FD932C607C0200D6ABE6 /* Pokemon.swift in Sources */,
 			);
