@@ -8,10 +8,6 @@
 import UIKit
 import RxSwift
 
-
-//
-// https://pokeapi.co/api/v2/pokemon/\(pokemon_id)/
-
 class MainViewModel {
     private let disposeBag = DisposeBag()
     

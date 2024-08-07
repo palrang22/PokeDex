@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class DetailViewController: UIViewController {
-    private let id: Int
+    private var pokemonDetail: PokemonDetail
     
     private let containerView: UIView = {
         let containerView = UIView()
@@ -20,7 +20,6 @@ class DetailViewController: UIViewController {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .white
         return imageView
     }()
     
@@ -28,7 +27,7 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.text = "11"
         label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 26)
         return label
     }()
     
@@ -36,7 +35,7 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.text = "11"
         label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 26)
         return label
     }()
     
@@ -44,7 +43,7 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.text = "11"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 20)
         return label
     }()
     
@@ -52,7 +51,7 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.text = "11"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 20)
         return label
     }()
     
@@ -60,7 +59,7 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.text = "11"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 20)
         return label
     }()
     
@@ -73,8 +72,8 @@ class DetailViewController: UIViewController {
         return stackView
     }()
     
-    init(id: Int) {
-        self.id = id
+    init(pokemonDetail: PokemonDetail) {
+        self.pokemonDetail = pokemonDetail
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -85,6 +84,16 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        updateUI()
+    }
+    
+    private func updateUI() {
+        imageView.loadPokemonImg(for: pokemonDetail)
+        noLabel.text = "No.\(pokemonDetail.id ?? 0)"
+        nameLabel.text = "\(pokemonDetail.name ?? "")"
+        typeLabel.text = "타입: \(pokemonDetail.types?.first?.type.name ?? "")"
+        heightLabel.text = "키: \(pokemonDetail.height ?? 0)m"
+        weightLabel.text = "몸무게: \(pokemonDetail.weight ?? 0)kg"
     }
     
     private func setupUI() {
@@ -96,29 +105,33 @@ class DetailViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide.snp.horizontalEdges).inset(30)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-            $0.height.equalTo(400)
+            $0.height.equalTo(500)
         }
         
         imageView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaInsets)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
+            $0.height.width.equalTo(200)
+            $0.centerX.equalToSuperview()
         }
         
         stackView.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
         }
         
         typeLabel.snp.makeConstraints {
             $0.top.equalTo(stackView.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
         }
         
         heightLabel.snp.makeConstraints {
             $0.top.equalTo(typeLabel.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
         }
         
         weightLabel.snp.makeConstraints {
             $0.top.equalTo(heightLabel.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
         }
     }
-    
-
 }

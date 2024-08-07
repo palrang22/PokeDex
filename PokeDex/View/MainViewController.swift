@@ -83,9 +83,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedPokemon = pokemonDetail[indexPath.item]
-        guard let id = selectedPokemon.id else { return }
-        navigationController?.pushViewController(DetailViewController(id: id), animated: true)
+        let selectedPokemonDetail = pokemonDetail[indexPath.item]
+        navigationController?.pushViewController(DetailViewController(pokemonDetail: selectedPokemonDetail), animated: true)
     }
 }
 

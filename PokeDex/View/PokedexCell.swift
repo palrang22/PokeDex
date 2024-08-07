@@ -41,17 +41,6 @@ class PokedexCell: UICollectionViewCell {
     }
     
     func configure(with pokemonDetail: PokemonDetail) {
-        guard let id = pokemonDetail.id else { return }
-        let urlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(id).png"
-        guard let url = URL(string: urlString) else { return }
-        
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.imageView.image = image
-                    }
-                }
-            }}
+        imageView.loadPokemonImg(for: pokemonDetail)
     }
 }
