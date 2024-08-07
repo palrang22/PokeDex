@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct PokemonResponse: Codable {
+    let results: [Pokemon]
+}
+
+struct Pokemon: Codable {
+    let id: Int?
+    let name: String?
+    let types: String?
+    let height: Int?
+    let weight: Int?
+}
