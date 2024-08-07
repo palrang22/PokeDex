@@ -10,7 +10,7 @@ import Alamofire
 import RxSwift
 
 enum NetworkError : Error {
-    case invaildUrl
+    case invalidUrl
     case dataFetchFail
     case decodingFail
 }

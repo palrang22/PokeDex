@@ -82,6 +82,15 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let frameHeight = scrollView.frame.size.height
+        if offsetY > contentHeight - frameHeight - 500 {
+            viewModel.fetchPokemon()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedPokemonDetail = pokemonDetail[indexPath.item]
         navigationController?.pushViewController(DetailViewController(pokemonDetail: selectedPokemonDetail), animated: true)
@@ -90,7 +99,6 @@ extension MainViewController: UICollectionViewDelegate {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("count: \(pokemonDetail.count)")
         return pokemonDetail.count
     }
     
