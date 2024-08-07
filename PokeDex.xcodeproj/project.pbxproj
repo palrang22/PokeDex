@@ -18,7 +18,6 @@
 		E797FD8F2C607BB000D6ABE6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD8E2C607BB000D6ABE6 /* MainViewModel.swift */; };
 		E797FD912C607BC400D6ABE6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD902C607BC400D6ABE6 /* NetworkManager.swift */; };
 		E797FD932C607C0200D6ABE6 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD922C607C0200D6ABE6 /* Pokemon.swift */; };
-		E797FD952C607C0900D6ABE6 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD942C607C0900D6ABE6 /* Detail.swift */; };
 		E797FD992C607C6D00D6ABE6 /* PokedexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FD982C607C6D00D6ABE6 /* PokedexCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +32,6 @@
 		E797FD8E2C607BB000D6ABE6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E797FD902C607BC400D6ABE6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E797FD922C607C0200D6ABE6 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
-		E797FD942C607C0900D6ABE6 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		E797FD982C607C6D00D6ABE6 /* PokedexCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				E797FD922C607C0200D6ABE6 /* Pokemon.swift */,
-				E797FD942C607C0900D6ABE6 /* Detail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,7 +195,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E797FD722C607ADD00D6ABE6 /* MainViewController.swift in Sources */,
-				E797FD952C607C0900D6ABE6 /* Detail.swift in Sources */,
 				E797FD6E2C607ADD00D6ABE6 /* AppDelegate.swift in Sources */,
 				E797FD912C607BC400D6ABE6 /* NetworkManager.swift in Sources */,
 				E797FD992C607C6D00D6ABE6 /* PokedexCell.swift in Sources */,
