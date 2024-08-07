@@ -12,6 +12,7 @@ class PokedexCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = .cellBackground
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
@@ -20,13 +21,23 @@ class PokedexCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .cellBackground
-        contentView.addSubview(imageView)
-        imageView.frame = contentView.bounds
+        setCell()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
+    
+    func setCell() {
+        contentView.addSubview(imageView)
+        imageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
     
     func configure(with pokemonDetail: PokemonDetail) {
