@@ -16,7 +16,9 @@ class MainViewModel {
     private let disposeBag = DisposeBag()
     
     let pokemonSubject = BehaviorSubject(value: [Pokemon]())
-    init() {}
+    init() {
+        fetchPokemon()
+    }
     
     func fetchPokemon() {
         guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0") else {
