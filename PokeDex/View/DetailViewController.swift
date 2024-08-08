@@ -90,8 +90,8 @@ class DetailViewController: UIViewController {
     private func updateUI() {
         imageView.loadPokemonImg(for: pokemonDetail)
         noLabel.text = "No.\(pokemonDetail.id ?? 0)"
-        nameLabel.text = "\(pokemonDetail.name ?? "")"
-        typeLabel.text = "타입: \(pokemonDetail.types?.first?.type.name ?? "")"
+        nameLabel.text = "\(PokemonNameTranslate.getKoreanName(for: pokemonDetail.name ?? ""))"
+        typeLabel.text = "타입: \(PokemonTypeTranslate.getKoreanType(for:pokemonDetail.types?.first?.type.name ?? ""))"
         heightLabel.text = "키: \(pokemonDetail.height ?? 0)m"
         weightLabel.text = "몸무게: \(pokemonDetail.weight ?? 0)kg"
     }
