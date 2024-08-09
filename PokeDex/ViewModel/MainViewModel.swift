@@ -53,7 +53,6 @@ class MainViewModel {
             guard let id = pokemon.url!.split(separator: "/").last, let pokemonID = Int(id) else {
                 return Single.error(NetworkError.invalidUrl)
             }
-            print(pokemonID)
             let imageUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(pokemonID).png"
             guard let imageUrl = URL(string: imageUrlString) else {
                 return Single.error(NetworkError.invalidUrl)
@@ -72,46 +71,8 @@ class MainViewModel {
                 }
                 self.pokemonImageSubject.onNext(currentImages)
             }, onFailure: { error in
-                print("Failed to fetch images: \(error)")
+                print("에러 발생: \(error)")
             }).disposed(by: disposeBag)
     }
-    
-//    func fetchPokemon() {
-//        guard !isFetching else { return }
-//        isFetching = true
-//        
-//        guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=\(limit)&offset=\(offset)") else {
-//            pokemonSubject.onError(NetworkError.invalidUrl)
-//            return
-//        }
-//        
-//        NetworkManager.shared.fetch(url: url)
-//            .flatMap { [weak self] (pokemonResponse : PokemonResponse) -> Single<[PokemonDetail]> in
-//                guard let self else { return Single.just([]) }
-//                let pokemonDetail = pokemonResponse.results.compactMap { self.fetchPokemonDetail(from:$0.url).asSingle()}
-//                return Single.zip(pokemonDetail)
-//            }
-//            .observe(on: MainScheduler.instance)
-//            .subscribe(onSuccess: { [weak self] details in
-//                guard let self else { return }
-//                var currentDetails = try? self.pokemonSubject.value()
-//                currentDetails?.append(contentsOf: details)
-//                self.pokemonSubject.onNext(currentDetails ?? [])
-//                self.offset += self.limit
-//                self.isFetching = false
-//            }, onFailure: { error in
-//                self.pokemonSubject.onError(error)
-//                self.isFetching = false
-//            }).disposed(by: self.disposeBag)
-//    }
-//    
-//    func fetchPokemonDetail(from urlString: String?) -> Observable<PokemonDetail> {
-//        guard let urlString = urlString,
-//              let pokemonID = urlString.split(separator: "/").last,
-//              let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(pokemonID)/") else {
-//            return Observable.error(NetworkError.invalidUrl)
-//        }
-//        return NetworkManager.shared.fetch(url: url).asObservable()
-//    }
 }
 

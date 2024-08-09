@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
     
     private let mainViewModel = MainViewModel()
     private let disposeBag = DisposeBag()
-    private var pokemonDetail = [PokemonDetail]()
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -37,25 +36,20 @@ class MainViewController: UIViewController {
     }
     
     func bind() {
-        // 포켓몬 목록을 구독하여 업데이트
         mainViewModel.pokemonSubject
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] pokemonList in
                 guard let self = self else { return }
-                print("Pokemon List Updated: \(pokemonList)")
-                self.collectionView.reloadData() // 포켓몬 목록이 업데이트되면 컬렉션 뷰를 리로드
+                self.collectionView.reloadData()
             }, onError: { error in
-                print("Error occurred: \(error)")
             }).disposed(by: disposeBag)
         
-        // 이미지 데이터를 구독하여 업데이트
         mainViewModel.pokemonImageSubject
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                self.collectionView.reloadData() // 이미지가 업데이트되면 컬렉션 뷰를 리로드
+                self.collectionView.reloadData()
             }, onError: { error in
-                print("Error occurred: \(error)")
             }).disposed(by: disposeBag)
     }
 
@@ -103,8 +97,11 @@ extension MainViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedPokemonDetail = pokemonDetail[indexPath.item]
-        navigationController?.pushViewController(DetailViewController(pokemonDetail: selectedPokemonDetail), animated: true)
+        guard let pokemon = try? mainViewModel.pokemonSubject.value()[indexPath.item] else {
+            return
+        }
+        let detailVC = DetailViewController(pokemonUrl: pokemon.url)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 

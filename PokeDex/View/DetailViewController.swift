@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 import SnapKit
 
 class DetailViewController: UIViewController {
-    private var pokemonDetail: PokemonDetail
+    private var detailViewModel = DetailViewModel()
+    private var disposeBag = DisposeBag()
+    private var pokemonDetail = [PokemonDetail]()
     
     private let containerView: UIView = {
         let containerView = UIView()
@@ -25,7 +28,6 @@ class DetailViewController: UIViewController {
     
     private let noLabel: UILabel = {
         let label = UILabel()
-        label.text = "11"
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 26)
         return label
@@ -33,7 +35,6 @@ class DetailViewController: UIViewController {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "11"
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 26)
         return label
@@ -41,7 +42,6 @@ class DetailViewController: UIViewController {
     
     private let typeLabel: UILabel = {
         let label = UILabel()
-        label.text = "11"
         label.textColor = .white
         label.font = .systemFont(ofSize: 20)
         return label
@@ -49,7 +49,6 @@ class DetailViewController: UIViewController {
     
     private let heightLabel: UILabel = {
         let label = UILabel()
-        label.text = "11"
         label.textColor = .white
         label.font = .systemFont(ofSize: 20)
         return label
@@ -57,7 +56,6 @@ class DetailViewController: UIViewController {
     
     private let weightLabel: UILabel = {
         let label = UILabel()
-        label.text = "11"
         label.textColor = .white
         label.font = .systemFont(ofSize: 20)
         return label
@@ -72,9 +70,9 @@ class DetailViewController: UIViewController {
         return stackView
     }()
     
-    init(pokemonDetail: PokemonDetail) {
-        self.pokemonDetail = pokemonDetail
+    init(pokemonUrl: String?) {
         super.init(nibName: nil, bundle: nil)
+        detailViewModel.fetchPokemonDetail(from: pokemonUrl)
     }
     
     required init?(coder: NSCoder) {
@@ -83,15 +81,26 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         setupUI()
-        updateUI()
     }
     
-    private func updateUI() {
+    private func bind() {
+        detailViewModel.pokemonDetailSubject
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] pokemonDetail in
+                guard let self = self, let pokemonDetail = pokemonDetail else { return }
+                self.updateUI(with: pokemonDetail)
+            }, onError: { error in
+                print("에러 발생: \(error)")
+            }).disposed(by: disposeBag)
+    }
+    
+    private func updateUI(with pokemonDetail: PokemonDetail) {
         imageView.loadPokemonImg(for: pokemonDetail)
         noLabel.text = "No.\(pokemonDetail.id ?? 0)"
         nameLabel.text = "\(PokemonNameTranslate.getKoreanName(for: pokemonDetail.name ?? ""))"
-        typeLabel.text = "타입: \(PokemonTypeTranslate.getKoreanType(for:pokemonDetail.types?.first?.type.name ?? ""))"
+        typeLabel.text = "타입: \(PokemonTypeTranslate.getKoreanType(for: pokemonDetail.types?.first?.type.name ?? ""))"
         heightLabel.text = "키: \(pokemonDetail.height ?? 0)m"
         weightLabel.text = "몸무게: \(pokemonDetail.weight ?? 0)kg"
     }
