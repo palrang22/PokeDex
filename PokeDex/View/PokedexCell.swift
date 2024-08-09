@@ -40,7 +40,7 @@ class PokedexCell: UICollectionViewCell {
         }
     }
     
-    func configure(with pokemonDetail: PokemonDetail) {
-        imageView.loadPokemonImg(for: pokemonDetail)
+    func configure(with pokemon: Pokemon?, image: UIImage?) {
+        imageView.image = image ?? UIImage(named: "pokemonBallLoading")
     }
 }

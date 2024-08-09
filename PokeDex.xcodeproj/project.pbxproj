@@ -25,6 +25,7 @@
 		E797FDA12C636ABF00D6ABE6 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FDA02C636ABF00D6ABE6 /* UIImageView.swift */; };
 		E797FDA32C64C0F000D6ABE6 /* PokemonNameTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FDA22C64C0F000D6ABE6 /* PokemonNameTranslate.swift */; };
 		E797FDA52C64C16B00D6ABE6 /* PokemonTypeTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FDA42C64C16B00D6ABE6 /* PokemonTypeTranslate.swift */; };
+		E797FDA72C6593CB00D6ABE6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797FDA62C6593CB00D6ABE6 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		E797FDA02C636ABF00D6ABE6 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E797FDA22C64C0F000D6ABE6 /* PokemonNameTranslate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonNameTranslate.swift; sourceTree = "<group>"; };
 		E797FDA42C64C16B00D6ABE6 /* PokemonTypeTranslate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTypeTranslate.swift; sourceTree = "<group>"; };
+		E797FDA62C6593CB00D6ABE6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				E797FD8E2C607BB000D6ABE6 /* MainViewModel.swift */,
+				E797FDA62C6593CB00D6ABE6 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				E797FD9B2C62F51E00D6ABE6 /* UIColor.swift in Sources */,
 				E797FDA12C636ABF00D6ABE6 /* UIImageView.swift in Sources */,
 				E797FD8F2C607BB000D6ABE6 /* MainViewModel.swift in Sources */,
+				E797FDA72C6593CB00D6ABE6 /* DetailViewModel.swift in Sources */,
 				E797FD9F2C63510900D6ABE6 /* DetailViewController.swift in Sources */,
 				E797FDA32C64C0F000D6ABE6 /* PokemonNameTranslate.swift in Sources */,
 				E797FD9D2C630D3700D6ABE6 /* PokemonDetail.swift in Sources */,

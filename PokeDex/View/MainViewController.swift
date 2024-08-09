@@ -11,7 +11,7 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
-    private let viewModel = MainViewModel()
+    private let mainViewModel = MainViewModel()
     private let disposeBag = DisposeBag()
     private var pokemonDetail = [PokemonDetail]()
     
@@ -37,14 +37,25 @@ class MainViewController: UIViewController {
     }
     
     func bind() {
-        viewModel.pokemonSubject
+        // 포켓몬 목록을 구독하여 업데이트
+        mainViewModel.pokemonSubject
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] detail in
-                print("bind: \(detail)")
-                self?.pokemonDetail = detail
-                self?.collectionView.reloadData()
+            .subscribe(onNext: { [weak self] pokemonList in
+                guard let self = self else { return }
+                print("Pokemon List Updated: \(pokemonList)")
+                self.collectionView.reloadData() // 포켓몬 목록이 업데이트되면 컬렉션 뷰를 리로드
             }, onError: { error in
-                print("에러 발생: \(error)")
+                print("Error occurred: \(error)")
+            }).disposed(by: disposeBag)
+        
+        // 이미지 데이터를 구독하여 업데이트
+        mainViewModel.pokemonImageSubject
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.collectionView.reloadData() // 이미지가 업데이트되면 컬렉션 뷰를 리로드
+            }, onError: { error in
+                print("Error occurred: \(error)")
             }).disposed(by: disposeBag)
     }
 
@@ -87,7 +98,7 @@ extension MainViewController: UICollectionViewDelegate {
         let contentHeight = scrollView.contentSize.height
         let frameHeight = scrollView.frame.size.height
         if offsetY > contentHeight - frameHeight - 500 {
-            viewModel.fetchPokemon()
+            mainViewModel.fetchPokemon()
         }
     }
     
@@ -99,14 +110,18 @@ extension MainViewController: UICollectionViewDelegate {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pokemonDetail.count
+        let count = (try? mainViewModel.pokemonSubject.value().count) ?? 0
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PokedexCell.id, for: indexPath) as? PokedexCell else {
             return UICollectionViewCell()
         }
-        cell.configure(with: pokemonDetail[indexPath.row])
+        let pokemon = try? mainViewModel.pokemonSubject.value()[indexPath.item]
+        let image = try? mainViewModel.pokemonImageSubject.value()[indexPath.row + 1]
+        cell.configure(with: pokemon, image: image)
+        
         return cell
     }
 }

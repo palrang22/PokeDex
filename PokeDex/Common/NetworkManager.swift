@@ -5,7 +5,7 @@
 //  Created by 김승희 on 8/5/24.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 import RxSwift
 
@@ -43,6 +43,29 @@ class NetworkManager {
                 }
             }.resume()
             return Disposables.create()
+        }
+    }
+    
+    func fetchImage(url: URL) -> Single<UIImage> {
+        return Single.create { single in
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    single(.failure(error))
+                    return
+                }
+                
+                guard let data = data, let image = UIImage(data: data) else {
+                    single(.failure(NetworkError.dataFetchFail))
+                    return
+                }
+                
+                single(.success(image))
+            }
+            task.resume()
+            
+            return Disposables.create {
+                task.cancel()
+            }
         }
     }
 }
